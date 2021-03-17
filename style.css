@@ -90,7 +90,6 @@ input.removeEventListener("focus", inputFunctionFocus)
 
 .accordion__header__heading {
     font-size:1.75rem;
-    
 }
 
 
@@ -101,7 +100,7 @@ input.removeEventListener("focus", inputFunctionFocus)
     padding:1rem;
     margin:0.5rem 0;
 
-    
+    transition: all 0.5s ease;
 }
 
 .accordion__faq--active {
@@ -150,7 +149,7 @@ input.removeEventListener("focus", inputFunctionFocus)
     top:50%;
     transform:translate(-50%, -50%);
     opacity:1;
-    /* transition: transform 1s ease; */
+    transition: all 0.35s 0.15s ease;
 }
 
 .bar-1 {
@@ -158,17 +157,15 @@ input.removeEventListener("focus", inputFunctionFocus)
     opacity:1;
 }
 
-.bar-1--active {
+.bar-minus {
     transform:translate(-50%, -50%) rotate(0deg);
     opacity:0;
 }
 
-/*
-.bar-2 {
-}
-*/
 
 .faq__text {
+    line-height:1.25;
+
     max-height:0;
     overflow:hidden;
     -webkit-transition: max-height 0.5s ease;
@@ -177,5 +174,14 @@ input.removeEventListener("focus", inputFunctionFocus)
 }
 
 .faq__text--active {
-    max-height:500px;
+    max-height:200px;
+}
+
+
+
+/*mobile*/
+@media(max-width:700px) {
+    .accordion {
+        width:95%;
+    }
 }
