@@ -1,0 +1,181 @@
+:root {
+    --red:#b4345c;
+    --purple:#4b145b;
+    --white-dark:#eae6eb;
+    --gray-light:#7f7e89;
+    /* --gray-dark:#313136; */
+}
+
+
+
+*,*::before,*::after {
+    box-sizing: border-box;
+    padding:0;
+    margin:0;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color:var(--purple);
+    color:rgb(238, 230, 230);
+    line-height: 1;
+}
+
+
+li {
+    list-style-type: none;
+}
+
+img {
+    max-width:100%;
+}
+
+
+a {
+    text-decoration: none;
+    color:inherit;
+}
+
+button {
+    background:none;
+    border:none;
+    display:block;
+    color:inherit;
+}
+
+
+
+/*
+traversing the dom
+-----
+.parentElement
+.children
+.firstElementChild
+.previousElementSibling
+.nextElementSibling
+*/
+
+
+/*JAVASCRIPT events
+
+- can do inline
+<button class="my-btn" onClick="console.log('you clicked the btn')">my button</button>
+
+
+- add  event in js
+input.addEventListener("focus", inputFunctionFocus)
+
+- remove event in js
+input.removeEventListener("focus", inputFunctionFocus)
+*/
+
+
+
+
+.accordion {
+    background-color: #fff;
+    color:#222;
+    width:50rem;
+    position: absolute;
+    left:50%;
+    top:50%;
+    transform:translate(-50%, -50%);
+    display:grid;
+    grid-template-columns: 0.5fr 1fr;
+    grid-column-gap: 3rem;
+    padding:3rem;
+    border-radius: 7px;
+    filter: drop-shadow(4px 4px 4px rgba(59, 59, 59, 0.25));
+}
+
+.accordion__header__heading {
+    font-size:1.75rem;
+    
+}
+
+
+.accordion__faq {
+    background-color:inherit;
+    border:2px solid #efefef;
+    border-radius: 5px;
+    padding:1rem;
+    margin:0.5rem 0;
+
+    
+}
+
+.accordion__faq--active {
+    box-shadow: 0px 10px 10px #7f7e8952;
+}
+
+.faq__header {
+    display:flex;
+    justify-content: space-between;
+    align-items:center;
+    margin-bottom:0.5rem;
+    cursor: pointer;
+}
+
+.faq__heading__heading {
+    font-size:1.15rem;
+}
+
+
+.faq__heading__icon-container {
+    position: relative;
+    background:#f0e9ea;
+    color:var(--red);
+    width:2rem;
+    height: 2rem;
+    border-radius: 50%;
+    font-size:1rem;
+    transition:opacity 0.1s ease;
+}
+
+.faq__heading__icon-container:hover {
+    cursor: pointer;
+    opacity:0.8;
+}
+
+.faq__heading__icon-container:active {
+    opacity:1;
+}
+
+.bar {
+    position: absolute;
+    width:50%;
+    height:3px;
+    background:var(--red);
+    left:50%;
+    top:50%;
+    transform:translate(-50%, -50%);
+    opacity:1;
+    /* transition: transform 1s ease; */
+}
+
+.bar-1 {
+    transform:translate(-50%, -50%) rotate(90deg);
+    opacity:1;
+}
+
+.bar-1--active {
+    transform:translate(-50%, -50%) rotate(0deg);
+    opacity:0;
+}
+
+/*
+.bar-2 {
+}
+*/
+
+.faq__text {
+    max-height:0;
+    overflow:hidden;
+    -webkit-transition: max-height 0.5s ease;
+	-moz-transition: max-height 0.5s ease;
+	transition: max-height 0.5s ease;
+}
+
+.faq__text--active {
+    max-height:500px;
+}
